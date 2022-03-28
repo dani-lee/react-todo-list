@@ -1,0 +1,19 @@
+.form {
+  margin: 0 auto;
+}
+.form input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #c7a4ff;
+  width: 75%;
+}
+
+.addBtn {
+  padding: 10px 30px;
+  background: #9575cd;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 3px;
+  margin-left: 20px;
+  border: 0;
+}
