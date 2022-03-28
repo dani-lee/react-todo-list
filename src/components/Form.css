@@ -1,5 +1,6 @@
 .form {
-  margin: 0 auto;
+  margin: 0;
+  padding: 35px;
 }
 .form input {
   outline: none;

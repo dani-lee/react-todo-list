@@ -36,7 +36,7 @@ const TodoItem = (props) => {
           />
         )}
       </div>
-      <span>study React</span>
+      <span className={done ? "done-text" : ""}>study React</span>
       {removeBtn && (
         <div className="remove">
           <FontAwesomeIcon icon={faXmark} />
