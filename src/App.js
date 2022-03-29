@@ -51,8 +51,8 @@ function App() {
         <Header onDate={timestring} onDay={dayString} />
         <TodoList todos={todos} />
         {isRotated && <Form />}
+        <PlusButton openForm={isRotated} onClick={plusBtnHandler} />
       </TodoListTemplate>
-      <PlusButton openForm={isRotated} onClick={plusBtnHandler} />
     </div>
   );
 }
