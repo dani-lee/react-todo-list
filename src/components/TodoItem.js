@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import db from "../../src/FirebaseConfig";
 import "./TodoItem.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,10 +13,16 @@ const TodoItem = (props) => {
 
   const checkBoxHandler = () => {
     if (!done) {
+      db.collection("todos").doc(props.id).update({ done: true });
       setDone(true);
     } else {
+      db.collection("todos").doc(props.id).update({ done: false });
       setDone(false);
     }
+  };
+
+  const deleteTodoHandler = () => {
+    db.collection("todos").doc(props.id).delete();
   };
   return (
     <li
@@ -38,7 +44,7 @@ const TodoItem = (props) => {
       </div>
       <span className={done ? "done-text" : ""}>{props.todo}</span>
       {removeBtn && (
-        <div className="remove">
+        <div className="remove" onClick={deleteTodoHandler}>
           <FontAwesomeIcon icon={faXmark} />
         </div>
       )}
