@@ -32,7 +32,6 @@ function App() {
   };
 
   const [todos, setTodos] = useState([]);
-  const [input, setInput] = useState("");
 
   useEffect(() => {
     db.collection("todos").onSnapshot((data) => {
@@ -44,18 +43,14 @@ function App() {
         }))
       );
     });
-  }, [input]);
-
-  const addTodoHandler = () => {
-    setInput("");
-  };
+  }, []);
 
   return (
     <div>
       <TodoListTemplate>
         <Header onDate={timestring} onDay={dayString} />
         <TodoList todos={todos} />
-        {isRotated && <Form addTodo={addTodoHandler} input={input} />}
+        {isRotated && <Form />}
       </TodoListTemplate>
       <PlusButton openForm={isRotated} onClick={plusBtnHandler} />
     </div>
