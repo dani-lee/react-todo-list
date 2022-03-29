@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
+import "./TodoItem.css";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faCircle } from "@fortawesome/free-regular-svg-icons";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 
-import "./TodoItem.css";
-
 const TodoItem = (props) => {
   const [removeBtn, setRemoveBtn] = useState(false);
-  const [done, setDone] = useState(false);
+  const [done, setDone] = useState(props.done);
 
   const checkBoxHandler = () => {
     if (!done) {
@@ -36,7 +36,7 @@ const TodoItem = (props) => {
           />
         )}
       </div>
-      <span className={done ? "done-text" : ""}>study React</span>
+      <span className={done ? "done-text" : ""}>{props.todo}</span>
       {removeBtn && (
         <div className="remove">
           <FontAwesomeIcon icon={faXmark} />

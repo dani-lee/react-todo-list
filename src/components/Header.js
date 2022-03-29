@@ -2,11 +2,11 @@ import React from "react";
 
 import "./Header.css";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <div className="title">
-      <p>03.28.2022</p>
-      <div className="day">TUE</div>
+      <p>{props.onDate}</p>
+      <div className="day">{props.onDay}</div>
       <div className="tasks-left">[2] &nbsp;tasks left</div>
     </div>
   );

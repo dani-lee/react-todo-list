@@ -4,10 +4,12 @@ import "./TodoList.css";
 
 import TodoItem from "./TodoItem";
 
-const TodoList = () => {
+const TodoList = (props) => {
   return (
     <ul>
-      <TodoItem />
+      {props.todos.map((todo) => (
+        <TodoItem key={todo.id} todo={todo.todo} done={todo.done} />
+      ))}
     </ul>
   );
 };
